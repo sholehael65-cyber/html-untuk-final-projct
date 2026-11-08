@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pengelolaan Data Kasir</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FAF7F2] min-h-screen flex font-sans">
+  <aside class="w-64 bg-[#5B4636] text-[#D4C3B3] flex flex-col justify-between py-6 px-4">
+    <div class="space-y-6">
+      <div class="flex items-center gap-3 px-2">
+        <div class="w-10 h-10 rounded-lg bg-[#8C6D53] text-white flex items-center justify-center font-bold">K</div>
+        <div>
+          <div class="text-white font-semibold text-sm">Kasir</div>
+          <div class="text-[10px] text-stone-300 tracking-wider">MANAJEMEN TOKO</div>
+        </div>
+      </div>
+      <nav class="space-y-1 text-xs">
+        <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-solid fa-border-all w-4"></i> Dashboard Utama</a>
+        <a href="kelola-kasir.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#7A604D] text-white font-medium"><i class="fa-solid fa-users w-4"></i> Pengelolaan Data Kasir</a>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="flex-1 flex flex-col">
+    <header class="h-16 bg-white border-b border-stone-200 px-8 flex items-center justify-between">
+      <div>
+        <h2 class="text-xs font-bold text-stone-800">Pengelolaan Data Kasir</h2>
+        <p class="text-[10px] text-stone-400">Kasir • Bandung</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#8C6D53] text-white flex items-center justify-center text-xs font-bold">NE</div>
+        <div class="text-xs text-right"><p class="font-semibold text-stone-800">Nabila El-Sholeha</p><span class="text-[10px] text-stone-400">Admin</span></div>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-6">
+      <div class="flex justify-between items-start">
+        <div>
+          <h1 class="text-2xl font-bold text-stone-800">Pengelolaan Data Kasir</h1>
+          <p class="text-xs text-stone-500 mt-1">Kelola akun dan akses staf kasir.</p>
+        </div>
+        <button class="bg-[#8C6D53] hover:bg-[#785c45] text-white px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-plus"></i> Tambah Staf Kasir</button>
+      </div>
+
+      <div class="bg-white rounded-xl border border-stone-200 overflow-hidden">
+        <table class="w-full text-left text-xs text-stone-600">
+          <thead class="bg-[#FAF7F2] text-[10px] font-bold uppercase text-stone-500 border-b border-stone-200">
+            <tr>
+              <th class="p-3.5">ID Kasir</th>
+              <th class="p-3.5">Nama Lengkap</th>
+              <th class="p-3.5">Username</th>
+              <th class="p-3.5">Email</th>
+              <th class="p-3.5">No. HP</th>
+              <th class="p-3.5">Status</th>
+              <th class="p-3.5 text-center">Aksi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-100">
+            <tr>
+              <td class="p-3.5 text-stone-500">KSR-001</td>
+              <td class="p-3.5 font-bold text-stone-800">Aulia Rahman</td>
+              <td class="p-3.5">aulia.r</td>
+              <td class="p-3.5">aulia@kedaipos.id</td>
+              <td class="p-3.5">0812-3456-2201</td>
+              <td class="p-3.5"><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-semibold">Aktif</span></td>
+              <td class="p-3.5 text-center space-x-2 text-stone-400">
+                <button class="hover:text-stone-700"><i class="fa-solid fa-pen"></i></button>
+                <button class="hover:text-stone-700"><i class="fa-solid fa-gear"></i></button>
+                <button class="hover:text-rose-600"><i class="fa-regular fa-trash-can"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-3.5 text-stone-500">KSR-002</td>
+              <td class="p-3.5 font-bold text-stone-800">Maya Putri</td>
+              <td class="p-3.5">maya.p</td>
+              <td class="p-3.5">maya@kedaipos.id</td>
+              <td class="p-3.5">0813-6677-9012</td>
+              <td class="p-3.5"><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-semibold">Aktif</span></td>
+              <td class="p-3.5 text-center space-x-2 text-stone-400">
+                <button class="hover:text-stone-700"><i class="fa-solid fa-pen"></i></button>
+                <button class="hover:text-stone-700"><i class="fa-solid fa-gear"></i></button>
+                <button class="hover:text-rose-600"><i class="fa-regular fa-trash-can"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

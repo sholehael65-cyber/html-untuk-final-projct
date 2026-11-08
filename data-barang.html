@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Barang - POS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FAF7F2] min-h-screen flex font-sans">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#5B4636] text-[#D4C3B3] flex flex-col justify-between py-6 px-4">
+    <div class="space-y-6">
+      <div class="flex items-center gap-3 px-2">
+        <div class="w-10 h-10 rounded-lg bg-[#8C6D53] text-white flex items-center justify-center font-bold">K</div>
+        <div>
+          <div class="text-white font-semibold text-sm">Kasir</div>
+          <div class="text-[10px] text-stone-300 tracking-wider">MANAJEMEN TOKO</div>
+        </div>
+      </div>
+      <nav class="space-y-1 text-xs">
+        <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-solid fa-border-all w-4"></i> Dashboard Utama</a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-regular fa-folder w-4"></i> Data Kategori</a>
+        <a href="data-barang.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#7A604D] text-white font-medium"><i class="fa-solid fa-box-archive w-4"></i> Data Barang</a>
+        <a href="transaksi-pos.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-regular fa-newspaper w-4"></i> Transaksi Kasir (POS)</a>
+        <a href="barang-masuk.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-solid fa-truck w-4"></i> Barang Masuk & Pemasok</a>
+        <a href="laporan-keuangan.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-solid fa-chart-column w-4"></i> Laporan Keuangan</a>
+        <a href="arus-kas.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-solid fa-right-left w-4"></i> Arus Kas (Keluar/Masuk)</a>
+        <a href="kelola-kasir.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-solid fa-users w-4"></i> Pengelolaan Data Kasir</a>
+        <a href="pengaturan.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-solid fa-gear w-4"></i> Pengaturan & Reset Password</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Konten -->
+  <main class="flex-1 flex flex-col">
+    <header class="h-16 bg-white border-b border-stone-200 px-8 flex items-center justify-between">
+      <div>
+        <h2 class="text-xs font-bold text-stone-800">Data Barang</h2>
+        <p class="text-[10px] text-stone-400">Kasir • Bandung</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#8C6D53] text-white flex items-center justify-center text-xs font-bold">NE</div>
+        <div class="text-xs text-right">
+          <p class="font-semibold text-stone-800 leading-tight">Nabila El-Sholeha</p>
+          <span class="text-[10px] text-stone-400">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-6">
+      <div class="flex justify-between items-start">
+        <div>
+          <h1 class="text-2xl font-bold text-stone-800">Data Barang</h1>
+          <p class="text-xs text-stone-500 mt-1">Pantau stok, harga, dan informasi seluruh produk.</p>
+        </div>
+      </div>
+
+      <!-- Aksi Pencarian & Tombol -->
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3 flex-1">
+          <input type="text" placeholder="Cari nama barang..." class="w-80 border border-stone-300 rounded-lg px-3.5 py-2 text-xs focus:outline-none bg-white">
+          <select class="border border-stone-300 rounded-lg px-3 py-2 text-xs bg-white text-stone-600 focus:outline-none">
+            <option>Semua</option>
+          </select>
+        </div>
+        <div class="flex gap-2">
+          <button class="border border-stone-300 bg-white hover:bg-stone-50 text-stone-700 px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-download"></i> Impor Data</button>
+          <button class="bg-[#8C6D53] hover:bg-[#785c45] text-white px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2"><i class="fa-solid fa-plus"></i> Tambah Barang</button>
+        </div>
+      </div>
+
+      <!-- Tabel -->
+      <div class="bg-white rounded-xl border border-stone-200 overflow-hidden">
+        <table class="w-full text-left text-xs text-stone-600">
+          <thead class="bg-[#FAF7F2] text-[10px] font-bold uppercase text-stone-500 border-b border-stone-200">
+            <tr>
+              <th class="p-4">Barang</th>
+              <th class="p-4">Kategori</th>
+              <th class="p-4">Stok</th>
+              <th class="p-4">Satuan</th>
+              <th class="p-4">Harga Beli</th>
+              <th class="p-4">Harga Jual</th>
+              <th class="p-4">Status Stok</th>
+              <th class="p-4 text-center">Aksi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-100">
+            <tr>
+              <td class="p-4 font-semibold text-stone-800 flex items-center gap-3">
+                <div class="w-9 h-9 bg-stone-100 rounded border"></div> Minyak Sunco 2L
+              </td>
+              <td class="p-4">Makanan</td>
+              <td class="p-4 font-bold text-stone-800">24</td>
+              <td class="p-4">Pouch</td>
+              <td class="p-4">Rp 31.500</td>
+              <td class="p-4 font-bold text-stone-800">Rp 35.000</td>
+              <td class="p-4"><span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded-full text-[10px] font-semibold">Tersedia</span></td>
+              <td class="p-4 text-center space-x-2 text-stone-400">
+                <button class="hover:text-stone-700"><i class="fa-solid fa-pen"></i></button>
+                <button class="hover:text-rose-600"><i class="fa-regular fa-trash-can"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-stone-800 flex items-center gap-3">
+                <div class="w-9 h-9 bg-stone-100 rounded border"></div> Air Le Minerale 600ml
+              </td>
+              <td class="p-4">Minuman</td>
+              <td class="p-4 font-bold text-stone-800">68</td>
+              <td class="p-4">Botol</td>
+              <td class="p-4">Rp 2.800</td>
+              <td class="p-4 font-bold text-stone-800">Rp 4.000</td>
+              <td class="p-4"><span class="bg-emerald-50 text-emerald-700 px-2 py-1 rounded-full text-[10px] font-semibold">Tersedia</span></td>
+              <td class="p-4 text-center space-x-2 text-stone-400">
+                <button class="hover:text-stone-700"><i class="fa-solid fa-pen"></i></button>
+                <button class="hover:text-rose-600"><i class="fa-regular fa-trash-can"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-stone-800 flex items-center gap-3">
+                <div class="w-9 h-9 bg-stone-100 rounded border"></div> Beras Pandan Wangi 5kg
+              </td>
+              <td class="p-4">Makanan</td>
+              <td class="p-4 font-bold text-stone-800">8</td>
+              <td class="p-4">Karung</td>
+              <td class="p-4">Rp 68.500</td>
+              <td class="p-4 font-bold text-stone-800">Rp 75.000</td>
+              <td class="p-4"><span class="bg-amber-50 text-amber-700 px-2 py-1 rounded-full text-[10px] font-semibold">Menipis</span></td>
+              <td class="p-4 text-center space-x-2 text-stone-400">
+                <button class="hover:text-stone-700"><i class="fa-solid fa-pen"></i></button>
+                <button class="hover:text-rose-600"><i class="fa-regular fa-trash-can"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-stone-800 flex items-center gap-3">
+                <div class="w-9 h-9 bg-stone-100 rounded border"></div> Kopi Kapal Api 165gr
+              </td>
+              <td class="p-4">Minuman</td>
+              <td class="p-4 font-bold text-stone-800">0</td>
+              <td class="p-4">Bungkus</td>
+              <td class="p-4">Rp 12.400</td>
+              <td class="p-4 font-bold text-stone-800">Rp 15.000</td>
+              <td class="p-4"><span class="bg-rose-50 text-rose-600 px-2 py-1 rounded-full text-[10px] font-semibold">Habis</span></td>
+              <td class="p-4 text-center space-x-2 text-stone-400">
+                <button class="hover:text-stone-700"><i class="fa-solid fa-pen"></i></button>
+                <button class="hover:text-rose-600"><i class="fa-regular fa-trash-can"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

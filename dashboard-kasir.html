@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Kasir - Operasional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FAF7F2] min-h-screen flex font-sans">
+  <!-- Sidebar Khusus Staf Kasir (Menu Terbatas) -->
+  <aside class="w-64 bg-[#5B4636] text-[#D4C3B3] flex flex-col justify-between py-6 px-4">
+    <div class="space-y-6">
+      <div class="flex items-center gap-3 px-2">
+        <div class="w-10 h-10 rounded-lg bg-[#8C6D53] text-white flex items-center justify-center font-bold">K</div>
+        <div>
+          <div class="text-white font-semibold text-sm">Kasir</div>
+          <div class="text-[10px] text-stone-300 tracking-wider uppercase">MANAJEMEN TOKO</div>
+        </div>
+      </div>
+      <nav class="space-y-1 text-xs">
+        <a href="dashboard-kasir.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#7A604D] text-white font-medium">
+          <i class="fa-solid fa-border-all w-4"></i> Dashboard Utama
+        </a>
+        <a href="transaksi-pos.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white">
+          <i class="fa-regular fa-newspaper w-4"></i> Transaksi Kasir (POS)
+        </a>
+        <a href="pengaturan-kasir.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white">
+          <i class="fa-solid fa-gear w-4"></i> Pengaturan & Reset Password
+        </a>
+      </nav>
+    </div>
+
+    <div class="text-[11px] px-2 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      <div>
+        <span class="text-white font-medium">Sistem normal</span><br>
+        <span class="text-[10px]">Shift: Pagi</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Konten Kasir -->
+  <main class="flex-1 flex flex-col">
+    <header class="h-16 bg-white border-b border-stone-200 px-8 flex items-center justify-between">
+      <div>
+        <h2 class="text-xs font-bold text-stone-800">Dashboard Kasir</h2>
+        <p class="text-[10px] text-stone-400">Kasir • Meja Kasir 01</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#8C6D53] text-white flex items-center justify-center text-xs font-bold">AR</div>
+        <div class="text-xs text-right">
+          <p class="font-semibold text-stone-800 leading-tight">Aulia Rahman</p>
+          <span class="text-[10px] text-stone-400">Staf Kasir</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-6 overflow-y-auto">
+      <div class="flex justify-between items-center">
+        <div>
+          <span class="text-xs text-stone-500">Senin, 12 Mei 2025</span>
+          <h1 class="text-2xl font-bold text-stone-800">Halo, Aulia Rahman</h1>
+          <p class="text-xs text-stone-500 mt-1">Siap melayani transaksi pelanggan hari ini.</p>
+        </div>
+        <a href="transaksi-pos.html" class="bg-[#8C6D53] hover:bg-[#785c45] text-white px-5 py-2.5 rounded-lg text-xs font-semibold flex items-center gap-2 shadow-sm transition">
+          <i class="fa-solid fa-cash-register"></i> Buka Mesin Kasir (POS)
+        </a>
+      </div>
+
+      <!-- Ringkasan Shift Kasir Hari Ini -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="bg-white p-5 rounded-xl border border-stone-200">
+          <div class="flex justify-between items-start mb-2">
+            <span class="w-8 h-8 rounded bg-[#F8F3EE] text-[#8C6D53] flex items-center justify-center text-xs"><i class="fa-solid fa-wallet"></i></span>
+            <span class="text-xs text-emerald-600 font-bold">Shift Pagi</span>
+          </div>
+          <p class="text-[11px] text-stone-400">Total Penjualan Shift Ini</p>
+          <h3 class="text-xl font-bold text-stone-800">Rp 2.450.000</h3>
+        </div>
+        <div class="bg-white p-5 rounded-xl border border-stone-200">
+          <div class="flex justify-between items-start mb-2">
+            <span class="w-8 h-8 rounded bg-[#F8F3EE] text-[#8C6D53] flex items-center justify-center text-xs"><i class="fa-solid fa-receipt"></i></span>
+            <span class="text-xs text-stone-400 font-bold">Hari ini</span>
+          </div>
+          <p class="text-[11px] text-stone-400">Transaksi Selesai</p>
+          <h3 class="text-xl font-bold text-stone-800">34 Struk</h3>
+        </div>
+        <div class="bg-white p-5 rounded-xl border border-stone-200">
+          <div class="flex justify-between items-start mb-2">
+            <span class="w-8 h-8 rounded bg-[#F8F3EE] text-[#8C6D53] flex items-center justify-center text-xs"><i class="fa-solid fa-money-bill-wave"></i></span>
+            <span class="text-xs text-emerald-600 font-bold">Aktif</span>
+          </div>
+          <p class="text-[11px] text-stone-400">Modal Kas Masuk</p>
+          <h3 class="text-xl font-bold text-stone-800">Rp 500.000</h3>
+        </div>
+      </div>
+
+      <!-- Transaksi Terakhir di Kasir Ini -->
+      <div class="bg-white rounded-xl border border-stone-200 p-6 space-y-4">
+        <div class="flex justify-between items-center">
+          <h3 class="font-bold text-sm text-stone-800">Transaksi Terakhir Kasir</h3>
+          <span class="text-xs text-stone-400">Sinkronisasi otomatis</span>
+        </div>
+        <table class="w-full text-left text-xs text-stone-600">
+          <thead class="bg-[#FAF7F2] text-[10px] font-bold uppercase text-stone-500 border-b border-stone-200">
+            <tr>
+              <th class="p-3">Waktu</th>
+              <th class="p-3">No. Nota</th>
+              <th class="p-3">Metode Bayar</th>
+              <th class="p-3">Total Belanja</th>
+              <th class="p-3 text-center">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-100">
+            <tr>
+              <td class="p-3">10:42 WIB</td>
+              <td class="p-3 font-semibold text-stone-800">#TRX-00432</td>
+              <td class="p-3">Tunai</td>
+              <td class="p-3 font-bold text-stone-800">Rp 75.000</td>
+              <td class="p-3 text-center"><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px]">Berhasil</span></td>
+            </tr>
+            <tr>
+              <td class="p-3">10:28 WIB</td>
+              <td class="p-3 font-semibold text-stone-800">#TRX-00431</td>
+              <td class="p-3">QRIS</td>
+              <td class="p-3 font-bold text-stone-800">Rp 35.000</td>
+              <td class="p-3 text-center"><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px]">Berhasil</span></td>
+            </tr>
+            <tr>
+              <td class="p-3">10:15 WIB</td>
+              <td class="p-3 font-semibold text-stone-800">#TRX-00430</td>
+              <td class="p-3">Tunai</td>
+              <td class="p-3 font-bold text-stone-800">Rp 120.000</td>
+              <td class="p-3 text-center"><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px]">Berhasil</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

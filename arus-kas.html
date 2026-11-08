@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Arus Kas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#FAF7F2] min-h-screen flex font-sans">
+  <aside class="w-64 bg-[#5B4636] text-[#D4C3B3] flex flex-col justify-between py-6 px-4">
+    <div class="space-y-6">
+      <div class="flex items-center gap-3 px-2">
+        <div class="w-10 h-10 rounded-lg bg-[#8C6D53] text-white flex items-center justify-center font-bold">K</div>
+        <div>
+          <div class="text-white font-semibold text-sm">Kasir</div>
+          <div class="text-[10px] text-stone-300 tracking-wider">MANAJEMEN TOKO</div>
+        </div>
+      </div>
+      <nav class="space-y-1 text-xs">
+        <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#6e5543] hover:text-white"><i class="fa-solid fa-border-all w-4"></i> Dashboard Utama</a>
+        <a href="arus-kas.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#7A604D] text-white font-medium"><i class="fa-solid fa-right-left w-4"></i> Arus Kas (Keluar/Masuk)</a>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="flex-1 flex flex-col">
+    <header class="h-16 bg-white border-b border-stone-200 px-8 flex items-center justify-between">
+      <div>
+        <h2 class="text-xs font-bold text-stone-800">Arus Kas (Keluar/Masuk)</h2>
+        <p class="text-[10px] text-stone-400">Kasir • Bandung</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-[#8C6D53] text-white flex items-center justify-center text-xs font-bold">NE</div>
+        <div class="text-xs text-right"><p class="font-semibold text-stone-800">Nabila El-Sholeha</p><span class="text-[10px] text-stone-400">Admin</span></div>
+      </div>
+    </header>
+
+    <div class="p-8 space-y-6">
+      <div>
+        <h1 class="text-2xl font-bold text-stone-800">Arus Kas</h1>
+        <p class="text-xs text-stone-500 mt-1">Pantau seluruh pergerakan kas masuk dan keluar.</p>
+      </div>
+
+      <!-- Kartu Status -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="bg-white p-5 rounded-xl border border-stone-200">
+          <div class="flex items-center gap-2 text-xs font-medium text-stone-500 mb-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Total Kas Masuk</div>
+          <h3 class="text-xl font-bold text-stone-800">Rp 28.450.000</h3>
+          <span class="text-[10px] text-stone-400">Periode berjalan</span>
+        </div>
+        <div class="bg-white p-5 rounded-xl border border-stone-200">
+          <div class="flex items-center gap-2 text-xs font-medium text-stone-500 mb-1"><span class="w-2 h-2 rounded-full bg-rose-500"></span> Total Kas Keluar</div>
+          <h3 class="text-xl font-bold text-stone-800">Rp 11.275.000</h3>
+          <span class="text-[10px] text-stone-400">Periode berjalan</span>
+        </div>
+        <div class="bg-white p-5 rounded-xl border border-stone-200">
+          <div class="flex items-center gap-2 text-xs font-medium text-stone-500 mb-1"><span class="w-2 h-2 rounded-full bg-stone-700"></span> Saldo Saat Ini</div>
+          <h3 class="text-xl font-bold text-stone-800">Rp 17.175.000</h3>
+          <span class="text-[10px] text-stone-400">Periode berjalan</span>
+        </div>
+      </div>
+
+      <!-- Mutasi Kas -->
+      <div class="space-y-3">
+        <div class="flex justify-between items-center">
+          <h3 class="font-bold text-sm text-stone-800">Mutasi Kas</h3>
+          <input type="date" class="border border-stone-300 rounded-lg px-3 py-1.5 text-xs bg-white text-stone-600">
+        </div>
+        <div class="bg-white rounded-xl border border-stone-200 overflow-hidden">
+          <table class="w-full text-left text-xs text-stone-600">
+            <thead class="bg-[#FAF7F2] text-[10px] font-bold uppercase text-stone-500 border-b border-stone-200">
+              <tr>
+                <th class="p-3.5">Tanggal</th>
+                <th class="p-3.5">Keterangan</th>
+                <th class="p-3.5">Referensi</th>
+                <th class="p-3.5">Jenis</th>
+                <th class="p-3.5">Nominal</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-100">
+              <tr>
+                <td class="p-3.5">12 Mei 2025</td>
+                <td class="p-3.5 font-bold text-stone-800">Penjualan harian</td>
+                <td class="p-3.5">TRX-120525</td>
+                <td class="p-3.5"><span class="bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded text-[10px]">Masuk</span></td>
+                <td class="p-3.5 font-bold text-emerald-600">+ Rp 2.450.000</td>
+              </tr>
+              <tr>
+                <td class="p-3.5">12 Mei 2025</td>
+                <td class="p-3.5 font-bold text-stone-800">Pembelian stok minyak</td>
+                <td class="p-3.5">SUP-0192</td>
+                <td class="p-3.5"><span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">Keluar</span></td>
+                <td class="p-3.5 font-bold text-rose-600">- Rp 620.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
